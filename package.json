@@ -1,0 +1,37 @@
+{
+  "name": "bim-web-viewer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "copy:wasm": "node scripts/copy-wasm.mjs",
+    "postinstall": "npm run copy:wasm",
+    "predev": "npm run copy:wasm",
+    "dev": "vite --host 127.0.0.1",
+    "prebuild": "npm run copy:wasm",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^1.75.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.187.0",
+    "web-ifc": "^0.0.79",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.187.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "autoprefixer": "^10.6.2",
+    "oxlint": "^1.90.0",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^3.4.19",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6"
+  }
+}
